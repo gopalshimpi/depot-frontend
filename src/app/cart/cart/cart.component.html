@@ -1,0 +1,20 @@
+<h2>Your Cart</h2>
+<hr>
+<table>
+
+	<tr class="total_line" *ngFor="let line of lineItems"  > 
+		<td colspan="2">{{line.quantity}} X {{ line.product.title }} </td>
+		<td class="total_cell" > Rs.{{line.gtotal}} </td>
+		<td class="total_cell">Grand {{ line.total }}</td>
+	</tr>
+	<hr>
+	<tr>
+		<td></td>
+	</tr>
+</table>
+<button type="button"  >Checkout </button>
+<button type="button"  >Empty cart</button>
+<hr>
+<br>
+<br>
+<br>
