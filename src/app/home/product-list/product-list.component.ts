@@ -33,9 +33,6 @@ export class ProductListComponent implements OnInit {
     localStorage.setItem('cart_id',''+lineItem.cart_id);
     this.productService.updateCart();   
     lineItem.gtotal = (lineItem.quantity * lineItem.product.price);
-   this.g= this.g + lineItem.gtotal;
-   lineItem.total=this.g
-    console.log(lineItem.total);
   
     });
   }
