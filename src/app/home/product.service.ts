@@ -29,7 +29,8 @@ export class ProductService {
     return this.products[id];
   }
   // getting product data from API
-  getData() {
+  
+  getData():Observable<any> {
     return this.http.get(`${this.baseUrl}/products.json`)
       .map((response: Response) => response.json());
   }
@@ -41,9 +42,9 @@ export class ProductService {
       .map((response: Response) => {
         const addedItem = response.json() as LineItem
         this.lineItems.set(addedItem.product_id, addedItem);//hasmap
-        console.log(this.lineItems);
-      const temp: any = addedItem.price * addedItem.quantity ;    
-        console.log("total",addedItem.price);
+        
+        //displying price.  
+        const temp: any = addedItem.price * addedItem.quantity ;    
         return addedItem;
       });
   }
